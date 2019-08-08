@@ -1,4 +1,4 @@
-# isnasdaqdown
+# ismarketdown
 
 Building the simplest webapp with Flask, inspired by isitchristmas.com it returns simple mmessage 
 stating if NASDAQ is down or up from yesterday
