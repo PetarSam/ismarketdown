@@ -6,15 +6,15 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    sauce = urllib.request.urlopen('https://www.nasdaq.com/symbol/ndaq').read()
+    sauce = urllib.request.urlopen('https://www.marketscreener.com/NASDAQ-COMP-4944/').read()
     soup = bs.BeautifulSoup(sauce, 'lxml')
     
-    change= float(soup.find('div', id='qwidget_netchange').text)
+    result = soup.find('td', id='zbjsfv_pf').text[0]
    
-    if change > 0:
-        down = False
-    else:
+    if result == "-":
         down = True
+    else:
+        down = False
 
     return render_template("index.html", down=down)
 
