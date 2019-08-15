@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    sauce = urllib.request.urlopen('https://www.marketscreener.com/NASDAQ-COMP-4944/').read()
+    sauce = urllib.request.urlopen('https://www.marketscreener.com/NASDAQ-10173/').read()
     soup = bs.BeautifulSoup(sauce, 'lxml')
     
     result = soup.find('td', id='zbjsfv_pf').text[0]
